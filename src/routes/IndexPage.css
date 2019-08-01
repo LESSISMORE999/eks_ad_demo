@@ -1,0 +1,18 @@
+.div_content{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* Webkit 内核的浏览器如Safari,需要设置 */
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  justify-self: flex-start;
+}
+.test{
+  width: 300px;
+}
+.div_empty{
+  width: 300px;
+  height: 0;
+}
