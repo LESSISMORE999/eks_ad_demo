@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
+import PropTypes from 'prop-types';
 import styles from './Item.css';
 
 function Item({ dispatch, we_chat_long_url_string, mini_program_image_url_string }) {
@@ -19,6 +20,8 @@ function Item({ dispatch, we_chat_long_url_string, mini_program_image_url_string
 }
 
 Item.propTypes = {
+  we_chat_long_url_string: PropTypes.string,
+  mini_program_image_url_string: PropTypes.string,
 };
 
 function mapStateToProps(state) {
