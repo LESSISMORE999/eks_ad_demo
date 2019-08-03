@@ -1,0 +1,15 @@
+.div_content{
+  margin-top: 2%;
+  /* Webkit 内核的浏览器如Safari,需要设置 */
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.item{
+  width: 300px;
+}
+.div_empty{
+  width: 300px;
+  height: 0;
+}

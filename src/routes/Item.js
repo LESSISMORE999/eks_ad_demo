@@ -2,18 +2,17 @@ import React from 'react';
 import {connect} from 'dva';
 import styles from './Item.css';
 
-function Item() {
+function Item({ dispatch, we_chat_long_url_string, mini_program_image_url_string }) {
   function clickHandle(event) {
-    console.log(event)
-    console.log(event.target.id)
+    window.location.href = we_chat_long_url_string
   }
   return (
     <div className="root">
-      <img id="1" className={styles.item} onClick={clickHandle} src="/src/assets/20190801_1820.jpg" alt="小程序码"/>
+      <img id="1" className={styles.item} src={mini_program_image_url_string} alt="小程序码"/>
       <div className={styles.div_empty}/>
       <div className={styles.div_foot}>
         <div className={styles.div_save}>保存图片</div>
-        <div className={styles.div_open}>打开拼多多</div>
+        <div className={styles.div_open} onClick={clickHandle}>打开拼多多</div>
       </div>
     </div>
   );
@@ -22,4 +21,11 @@ function Item() {
 Item.propTypes = {
 };
 
-export default connect()(Item);
+function mapStateToProps(state) {
+  return {
+    we_chat_long_url_string: state.item.we_chat_long_url_string,
+    mini_program_image_url_string: state.item.mini_program_image_url_string,
+  };
+}
+
+export default connect(mapStateToProps)(Item);
